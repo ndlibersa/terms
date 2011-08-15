@@ -96,12 +96,12 @@ if (($isbn == '') && ($issn == '')){
 							$document = new Document(new NamedArguments(array('primaryKey' => $expression->documentID)));
 
 							if ((!$document->effectiveDate) || ($document->effectiveDate == '0000-00-00')){
-								$effectiveDate = $document->getLastSignatureDate();
+								$effectiveDate = format_date($document->getLastSignatureDate());
 							}else{
-								$effectiveDate = date("m/d/Y", strtotime($document->effectiveDate));;
+								$effectiveDate = format_date($document->effectiveDate);;
 							}
 
-							$displayHTML .= "Terms as of " . $expression->getLastUpdateDate . ".  ";
+							$displayHTML .= "Terms as of " . format_date($expression->getLastUpdateDate) . ".  ";
 
 							$displayHTML .= "The following terms apply ONLY to articles accessed via <a href='" . $targetArray['target_url'] . "' target='_blank'>" . $targetArray['public_name'] . "</a><br /><br />";
 

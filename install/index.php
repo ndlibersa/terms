@@ -294,7 +294,7 @@ if ($step == "3"){
 				</td>
 			</tr>
 			<tr>
-				<td>&nbsp;SID <span style='font-size:90%; color:red'>(SFX only)</span></td>
+				<td>&nbsp;Source ID <span style='font-size:90%; color:red'>(SFX only)</span></td>
 				<td>
 					<input type="text" name="sid" size="30" value="<?=$sid?>">
 				</td>
