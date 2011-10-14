@@ -1,0 +1,36 @@
+html {
+ height: 100%;
+ margin: 0;
+ padding: 0
+}
+
+body {
+ height: 100%;
+ text-decoration: none;
+ color:  #2c3c42;
+ font-family: "arial";
+ font-size: 10pt;
+ font-weight: heavy;
+ background: #3D545D;
+ margin: 0; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+ padding: 0;
+ text-align: center; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the container table */
+ 
+}
+
+
+a {color:#3D545D;font-size:9pt;}
+a:active {color:#94a9be;}
+a:focus {color:#94a9be; outline: none; -moz-outline-style: none;}
+a.smallLink {font-size:95%; }
+
+smallText{font-size:90%;}
+
+.headerText {font-size:160%;font-weight:bold; }
+.titleText {font-size:130%;font-weight:bold; }
+
+div.shaded{background:#f4f8fc;}
+div.darkShaded{background:#3D545D; color: white;}
+img {border:0;}
+
+
