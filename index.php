@@ -136,7 +136,7 @@ if (($isbn == '') && ($issn == '')){
 
 								$displayHTML .= "<div id='div_display_" . $expression->expressionID . "_" . $i . "' style='display:none; width:600px;'>";
 								$displayHTML .= "<a href='javascript:void(0);' class='hideText smallLink' value='" . $expression->expressionID . "_" . $i . "'><img src='images/arrowdown.gif'></a>&nbsp;&nbsp;<a href='javascript:void(0);' class='hideText' value='" . $expression->expressionID . "_" . $i . "'>hide license snippet</a><br />";
-								$displayHTML .= "<div class='shaded' style='margin-top: 5px; padding:5px 5px 5px 18px;'>From the license agreement ($effectiveDate):<br><br><i>" . $expression->documentText . "</i></div>";
+								$displayHTML .= "<div class='shaded' style='margin-top: 5px; padding:5px 5px 5px 18px;'>From the license agreement ($effectiveDate):<br><br><i>" . nl2br($expression->documentText) . "</i></div>";
 								$displayHTML .= "</div>";
 
 							}
