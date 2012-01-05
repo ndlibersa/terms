@@ -80,15 +80,29 @@ class SFXService extends Object {
 		$targetArray = array();
 
 		//Loop through results and present selected targets
-		foreach ($xml->targets->target as $target) {
-		 	if($target->service_type == 'getFullTxt'){
-		 	  $resultArray['public_name'] = $target->target_public_name;
-		 	  $resultArray['target_url'] = $target->target_url;
+		if ($xml->targets) {
+  		foreach ($xml->targets->target as $target) {
+  		 	if($target->service_type == 'getFullTxt'){
+  		 	  $resultArray['public_name'] = $target->target_public_name;
+  		 	  $resultArray['target_url'] = $target->target_url;
 
-		 	  array_push($targetArray, $resultArray);
-		 	}
+  		 	  array_push($targetArray, $resultArray);
+  		 	}
+  		}
+		} else {
+		  // When there are multiple objects the xml is structured differently
+		  foreach ($xml->ctx_obj as $obj) {
+		    foreach ($obj->ctx_obj_targets->target as $target) {
+		      if($target->service_type == 'getFullTxt'){
+    		 	  $resultArray['public_name'] = $target->target_public_name;
+    		 	  $resultArray['target_url'] = $target->target_url;
+
+    		 	  array_push($targetArray, $resultArray);
+    		 	}
+		    }
+		  }
 		}
-
+		
 		return $targetArray;
 
 	}
