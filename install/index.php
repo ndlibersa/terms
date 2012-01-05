@@ -186,7 +186,7 @@ if ($step == "3"){
 	</ul>
 
 
-	<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
+	<form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
 	<input type='hidden' name='step' value='1'>
 	<input type="submit" value="Continue" name="submit">
 	</form>
@@ -215,9 +215,9 @@ if ($step == "3"){
 
 	<h3>Getting system info and verifying php version</h3>
 	<ul>
-	<li>System: <?=$phpinfo['phpinfo']['System'];?></li>
-    <li>PHP version: <?=phpversion();?></li>
-    <li>Server API: <?=$phpinfo['phpinfo']['Server API'];?></li>
+	<li>System: <?php echo $phpinfo['phpinfo']['System'];?></li>
+    <li>PHP version: <?php echo phpversion();?></li>
+    <li>Server API: <?php echo $phpinfo['phpinfo']['Server API'];?></li>
 	</ul>
 
 	<br />
@@ -227,7 +227,7 @@ if ($step == "3"){
 
 	if (phpversion() >= 5){
 	?>
-		<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
+		<form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
 		<input type='hidden' name='step' value='2'>
 		<input type="submit" value="Continue" name="submit">
 		</form>
@@ -242,7 +242,7 @@ if ($step == "3"){
 	if (!$database_host) $database_host='localhost';
 	if (!$database_name) $database_name='coral_licensing_prod';
 	?>
-		<form method="post" action="<?=$_SERVER['PHP_SELF']?>">
+		<form method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
 		<h3>MySQL info with permissions select from your CORAL Licensing Database</h3>
 		<?php
 			if (count($errorMessage) > 0){
@@ -257,25 +257,25 @@ if ($step == "3"){
 			<tr>
 				<td>&nbsp;Database Host</td>
 				<td>
-					<input type="text" name="database_host" value='<?=$database_host?>' size="30">
+					<input type="text" name="database_host" value='<?php echo $database_host?>' size="30">
 				</td>
 			</tr>
 			<tr>
 				<td>&nbsp;Database Schema Name</td>
 				<td>
-					<input type="text" name="database_name" size="30" value="<?=$database_name?>">
+					<input type="text" name="database_name" size="30" value="<?php echo $database_name?>">
 				</td>
 			</tr>
 			<tr>
 				<td>&nbsp;Database Username</td>
 				<td>
-					<input type="text" name="database_username" size="30" value="<?=$database_username?>">
+					<input type="text" name="database_username" size="30" value="<?php echo $database_username?>">
 				</td>
 			</tr>
 			<tr>
 				<td>&nbsp;Database Password</td>
 				<td>
-					<input type="text" name="database_password" size="30" value="<?=$database_password?>">
+					<input type="text" name="database_password" size="30" value="<?php echo $database_password?>">
 				</td>
 			</tr>
 			<tr>
@@ -290,20 +290,20 @@ if ($step == "3"){
 			<tr>
 				<td>&nbsp;Open URL <span style='font-size:90%; color:red'>(SFX only)</span></td>
 				<td>
-					<input type="text" name="open_url" size="30" value="<?=$open_url?>">
+					<input type="text" name="open_url" size="30" value="<?php echo $open_url?>">
 				</td>
 			</tr>
 			<tr>
 				<td>&nbsp;Source ID <span style='font-size:90%; color:red'>(SFX only)</span></td>
 				<td>
-					<input type="text" name="sid" size="30" value="<?=$sid?>">
+					<input type="text" name="sid" size="30" value="<?php echo $sid?>">
 				</td>
 			</tr>
 
 			<tr>
 				<td>&nbsp;Client Identifier <span style='font-size:90%; color:red'>(Serials Solutions only)</span></td>
 				<td>
-					<input type="text" name="client_identifier" size="30" value="<?=$client_identifier?>">
+					<input type="text" name="client_identifier" size="30" value="<?php echo $client_identifier?>">
 				</td>
 			</tr>
 
