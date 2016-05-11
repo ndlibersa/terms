@@ -58,7 +58,7 @@ class ExpressionType extends DatabaseObject {
 
 		$query = ("SELECT E.expressionID
 					FROM Document D, SFXProvider SP, Expression E
-					WHERE D.documentId = E.documentId
+					WHERE D.documentID = E.documentID
 					AND (D.expirationDate is null || D.expirationDate = '0000-00-00')
 					AND SP.documentID = D.documentID
 					AND E.productionUseInd='1'
@@ -95,7 +95,7 @@ class ExpressionType extends DatabaseObject {
 
 		$query = ("SELECT distinct E.expressionTypeID
 					FROM Document D, SFXProvider SP, Expression E, ExpressionType ET
-					WHERE D.documentId = E.documentId
+					WHERE D.documentID = E.documentID
 					AND (D.expirationDate is null || D.expirationDate = '0000-00-00')
 					AND SP.documentID = D.documentID
 					AND E.productionUseInd='1'
